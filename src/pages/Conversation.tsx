@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import type { Conversation as ConvType, Message } from '../types';
+import { getAssetUrl } from '../utils/asset';
 import '../styles/conversation.css';
 
 interface Props {
@@ -18,11 +19,11 @@ const MessageBubble: React.FC<{ msg: Message }> = ({ msg }) => {
       {/* Bubble tail */}
       <img
         className="bubble-tail"
-        src={
+        src={getAssetUrl(
           isOutgoing
             ? '/assets/icons/bubble-tail-outgoing.svg'
             : '/assets/icons/bubble-tail-incoming.svg'
-        }
+        )}
         alt=""
       />
       {/* Quoted text */}
@@ -41,7 +42,7 @@ const MessageBubble: React.FC<{ msg: Message }> = ({ msg }) => {
         {isOutgoing && (
           <img
             className="check-icon"
-            src="/assets/icons/double-check-blue.svg"
+            src={getAssetUrl('/assets/icons/double-check-blue.svg')}
             alt="read"
           />
         )}
@@ -81,25 +82,25 @@ const Conversation: React.FC<Props> = ({ conversation, onBack, onSend }) => {
       <div className="chat-header">
         <img
           className="back-btn"
-          src="/assets/icons/back-arrow.svg"
+          src={getAssetUrl('/assets/icons/back-arrow.svg')}
           alt="back"
           onClick={onBack}
         />
         <img
           className="contact-avatar"
-          src={conversation.avatar}
+          src={getAssetUrl(conversation.avatar)}
           alt={conversation.contactName}
         />
         <span className="contact-name">{conversation.contactName}</span>
         <span className="last-seen">آخرین بازدید به تازگی</span>
         <img
           className="call-icon"
-          src="/assets/icons/phone-call.svg"
+          src={getAssetUrl('/assets/icons/phone-call.svg')}
           alt="call"
         />
         <img
           className="menu-icon"
-          src="/assets/icons/three-dot-menu.svg"
+          src={getAssetUrl('/assets/icons/three-dot-menu.svg')}
           alt="menu"
         />
       </div>
@@ -113,9 +114,15 @@ const Conversation: React.FC<Props> = ({ conversation, onBack, onSend }) => {
               ? {
                   background:
                     conversation.customWallpaper.startsWith('data:') ||
-                    conversation.customWallpaper.startsWith('http') ||
-                    conversation.customWallpaper.startsWith('/')
+                    conversation.customWallpaper.startsWith('http')
                       ? `url("${conversation.customWallpaper}") center/cover no-repeat`
+                      : conversation.customWallpaper.startsWith('/') ||
+                        conversation.customWallpaper.startsWith('./') ||
+                        conversation.customWallpaper.endsWith('.png') ||
+                        conversation.customWallpaper.endsWith('.jpg') ||
+                        conversation.customWallpaper.endsWith('.jpeg') ||
+                        conversation.customWallpaper.endsWith('.webp')
+                      ? `url("${getAssetUrl(conversation.customWallpaper)}") center/cover no-repeat`
                       : conversation.customWallpaper,
                 }
               : undefined
@@ -132,7 +139,7 @@ const Conversation: React.FC<Props> = ({ conversation, onBack, onSend }) => {
       {/* Scroll to bottom */}
       <img
         className="scroll-to-bottom"
-        src="/assets/icons/scroll-to-bottom.svg"
+        src={getAssetUrl('/assets/icons/scroll-to-bottom.svg')}
         alt="scroll down"
         onClick={() =>
           chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -143,7 +150,7 @@ const Conversation: React.FC<Props> = ({ conversation, onBack, onSend }) => {
       <div className="message-composer">
         <img
           className="emoji-btn"
-          src="/assets/icons/emoji.svg"
+          src={getAssetUrl('/assets/icons/emoji.svg')}
           alt="emoji"
         />
         <input
@@ -162,12 +169,12 @@ const Conversation: React.FC<Props> = ({ conversation, onBack, onSend }) => {
           <>
             <img
               className="attachment-btn"
-              src="/assets/icons/attachment.svg"
+              src={getAssetUrl('/assets/icons/attachment.svg')}
               alt="attach"
             />
             <img
               className="camera-btn"
-              src="/assets/icons/camera.svg"
+              src={getAssetUrl('/assets/icons/camera.svg')}
               alt="camera"
             />
           </>

@@ -4,10 +4,24 @@
  */
 export const getAssetUrl = (path: string): string => {
   if (!path) return '';
-  if (path.startsWith('data:') || path.startsWith('http://') || path.startsWith('https://')) {
+  if (
+    path.startsWith('data:') ||
+    path.startsWith('http://') ||
+    path.startsWith('https://') ||
+    path.startsWith('blob:')
+  ) {
     return path;
   }
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+
+  let cleanPath = path;
+  if (cleanPath.startsWith('./')) {
+    cleanPath = cleanPath.slice(2);
+  } else if (cleanPath.startsWith('/')) {
+    cleanPath = cleanPath.slice(1);
+  }
+
   const base = import.meta.env.BASE_URL || './';
-  return `${base}${cleanPath}`;
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  return `${cleanBase}${cleanPath}`;
 };
+

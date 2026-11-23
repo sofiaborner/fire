@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { Conversation, AppState, TabBadges } from '../types';
 import { getCurrentIranTime } from '../hooks/useAppState';
+import { getAssetUrl } from '../utils/asset';
 
 interface Props {
   state: AppState;
@@ -215,7 +216,7 @@ const Dashboard: React.FC<Props> = ({
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, overflow: 'hidden' }}>
                 <img
-                  src={conv.avatar}
+                  src={getAssetUrl(conv.avatar)}
                   alt=""
                   style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover' }}
                 />
@@ -458,7 +459,7 @@ const Dashboard: React.FC<Props> = ({
         <div className="section">
           <h3>عکس پروفایل "{currentConv.contactName}"</h3>
           <div className="avatar-preview-row">
-            <img src={currentConv.avatar} alt="Current" className="avatar-thumb" />
+            <img src={getAssetUrl(currentConv.avatar)} alt="Current" className="avatar-thumb" />
             <div style={{ flex: 1 }}>
               <label className="file-btn" style={{ margin: 0 }}>
                 انتخاب عکس از سیستم
@@ -476,7 +477,7 @@ const Dashboard: React.FC<Props> = ({
             {PRESET_AVATARS.map((av) => (
               <img
                 key={av.name}
-                src={av.path}
+                src={getAssetUrl(av.path)}
                 alt={av.name}
                 title={av.name}
                 onClick={() => onUpdateAvatar(selectedConvId, av.path)}
@@ -536,7 +537,7 @@ const Dashboard: React.FC<Props> = ({
 
           <div style={{ margin: '8px 0 4px', fontSize: 11 }}>عکس پروفایل چت جدید:</div>
           <div className="avatar-preview-row">
-            <img src={newChatAvatar} alt="New Avatar" className="avatar-thumb" />
+            <img src={getAssetUrl(newChatAvatar)} alt="New Avatar" className="avatar-thumb" />
             <label className="file-btn" style={{ margin: 0, flex: 1 }}>
               بارگذاری عکس دلخواه
               <input

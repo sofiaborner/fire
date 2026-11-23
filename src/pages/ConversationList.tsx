@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Conversation, TabBadges } from '../types';
+import { getAssetUrl } from '../utils/asset';
 import '../styles/conversationList.css';
 
 interface Props {
@@ -25,18 +26,18 @@ const ConversationList: React.FC<Props> = ({
       <div className="list-header">
         <img
           className="hamburger"
-          src="/assets/icons/hamburger.svg"
+          src={getAssetUrl('/assets/icons/hamburger.svg')}
           alt="menu"
         />
         <span className="app-title">ایتا</span>
         <img
           className="eitaa-logo"
-          src="/assets/icons/eitaa-logo.svg"
+          src={getAssetUrl('/assets/icons/eitaa-logo.svg')}
           alt="eitaa"
         />
         <img
           className="search-icon"
-          src="/assets/icons/search.svg"
+          src={getAssetUrl('/assets/icons/search.svg')}
           alt="search"
         />
       </div>
@@ -45,7 +46,7 @@ const ConversationList: React.FC<Props> = ({
       <div className="category-tabs">
         <img
           className="apps-icon"
-          src="/assets/icons/apps-grid.svg"
+          src={getAssetUrl('/assets/icons/apps-grid.svg')}
           alt="apps"
         />
         <div className="separator" />
@@ -57,7 +58,7 @@ const ConversationList: React.FC<Props> = ({
           <>
             <img
               className="unread-badge badge-all"
-              src="/assets/icons/unread-badge-all.svg"
+              src={getAssetUrl('/assets/icons/unread-badge-all.svg')}
               alt=""
             />
             <span className="unread-badge-text badge-all-text">{tabBadges.all}</span>
@@ -69,7 +70,7 @@ const ConversationList: React.FC<Props> = ({
           <>
             <img
               className="unread-badge badge-personal"
-              src="/assets/icons/unread-badge-channel.svg"
+              src={getAssetUrl('/assets/icons/unread-badge-channel.svg')}
               alt=""
             />
             <span className="unread-badge-text badge-personal-text">
@@ -83,7 +84,7 @@ const ConversationList: React.FC<Props> = ({
           <>
             <img
               className="unread-badge badge-channel"
-              src="/assets/icons/unread-badge-channel.svg"
+              src={getAssetUrl('/assets/icons/unread-badge-channel.svg')}
               alt=""
             />
             <span className="unread-badge-text badge-channel-text">
@@ -98,7 +99,7 @@ const ConversationList: React.FC<Props> = ({
         <div className="ad-section">
           <img
             className="ad-image"
-            src="/assets/images/ad-image.png"
+            src={getAssetUrl('/assets/images/ad-image.png')}
             alt="ad"
           />
           <span className="ad-title">تروریست واقعی کیه؟ 🔰</span>
@@ -122,12 +123,12 @@ const ConversationList: React.FC<Props> = ({
             className="conversation-row"
             onClick={() => onSelect(conv.id)}
           >
-            <img className="avatar" src={conv.avatar} alt={conv.contactName} />
+            <img className="avatar" src={getAssetUrl(conv.avatar)} alt={conv.contactName} />
             <div className="title-area">
               {conv.isMuted && (
                 <img
                   className="mute-icon"
-                  src="/assets/icons/mute.svg"
+                  src={getAssetUrl('/assets/icons/mute.svg')}
                   alt="muted"
                 />
               )}
@@ -139,7 +140,7 @@ const ConversationList: React.FC<Props> = ({
               {conv.isChannel && (
                 <img
                   className="channel-badge"
-                  src="/assets/icons/channel-badge.svg"
+                  src={getAssetUrl('/assets/icons/channel-badge.svg')}
                   alt="channel"
                 />
               )}
@@ -155,7 +156,7 @@ const ConversationList: React.FC<Props> = ({
               conv.messages[conv.messages.length - 1].sender === 'outgoing' ? (
               <img
                 className="read-check"
-                src="/assets/icons/double-check-blue.svg"
+                src={getAssetUrl('/assets/icons/double-check-blue.svg')}
                 alt="read"
               />
             ) : null}

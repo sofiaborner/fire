@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { AppState, Conversation, Message, TabBadges } from '../types';
 import { defaultConversations } from '../data/sampleData';
+import { getAssetUrl } from '../utils/asset';
 
 const STORAGE_KEY = 'eitaa-mockup-state-v5';
 
@@ -309,7 +310,7 @@ export function useAppState() {
     }) => {
       const now = getCurrentIranTime();
       const newId = `conv-${Date.now()}`;
-      const defaultAvatar = '/assets/images/avatar-timah.png';
+      const defaultAvatar = getAssetUrl('/assets/images/avatar-timah.png');
 
       const initialText = data.initialMessage?.trim() || 'سلام!';
       const newConv: Conversation = {
@@ -403,7 +404,7 @@ export function useAppState() {
       ? {
           id: 'temp',
           contactName: 'مخاطب',
-          avatar: '/assets/images/avatar-timah.png',
+          avatar: getAssetUrl('/assets/images/avatar-timah.png'),
           lastMessage: '',
           updatedAt: getCurrentIranTime(),
           unreadCount: 0,
