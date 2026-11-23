@@ -1,0 +1,327 @@
+.conversation-view {
+  width: 1080px;
+  height: 1849px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+/* Chat Header */
+.chat-header {
+  width: 1080px;
+  height: 169.766px;
+  background: #72829b;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.chat-header .back-btn {
+  position: absolute;
+  left: 57.79px;
+  top: 61.4px;
+  width: 54.181px;
+  height: 54.181px;
+  cursor: pointer;
+}
+
+.chat-header .contact-avatar {
+  position: absolute;
+  left: 191.44px;
+  top: 21.67px;
+  width: 126.421px;
+  height: 126.421px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-header .contact-name {
+  position: absolute;
+  left: 345px;
+  top: 9px;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 56.348px;
+  line-height: 90.301px;
+  color: white;
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.chat-header .last-seen {
+  position: absolute;
+  left: 345px;
+  top: 83px;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 44.789px;
+  line-height: 68.629px;
+  color: #d5e2ef;
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.chat-header .call-icon {
+  position: absolute;
+  left: 834.38px;
+  top: 57.79px;
+  width: 61.405px;
+  height: 61.405px;
+  cursor: pointer;
+}
+
+.chat-header .menu-icon {
+  position: absolute;
+  left: 1000.54px;
+  top: 61.4px;
+  width: 14.448px;
+  height: 50.569px;
+  cursor: pointer;
+}
+
+/* Chat Area */
+.chat-area {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.chat-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(168, 173, 211) 0%,
+    rgb(183, 188, 217) 12%,
+    rgb(190, 194, 215) 25%,
+    rgb(180, 184, 206) 40%,
+    rgb(155, 158, 173) 55%,
+    rgb(110, 113, 123) 70%,
+    rgb(55, 56, 61) 85%,
+    rgb(10, 10, 10) 100%
+  );
+  z-index: 0;
+}
+
+.messages-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px 40px 40px;
+  gap: 20px;
+  min-height: 100%;
+  justify-content: flex-end;
+  direction: ltr; /* Ensure flex cross-axis: flex-start = left, flex-end = right */
+}
+
+/* Message Bubble */
+.message-bubble {
+  position: relative;
+  max-width: 888.562px;
+  padding: 21.67px 32.51px 18.06px 32.51px;
+  box-shadow: 0px 2.528px 1.084px rgba(0, 0, 0, 0.07);
+  direction: rtl;
+}
+
+/* Outgoing Bubble (user sent, on RIGHT side) */
+.message-bubble.outgoing {
+  background: #e6f3fc;
+  border-radius: 36.12px 36.12px 7.224px 36.12px;
+  align-self: flex-end;
+  margin-right: 14px;
+}
+
+.message-bubble.outgoing .bubble-tail {
+  position: absolute;
+  right: -14px;
+  bottom: 0px;
+  width: 25.284px;
+  height: 36.12px;
+}
+
+/* Incoming Bubble (contact sent, on LEFT side) */
+.message-bubble.incoming {
+  background: white;
+  border-radius: 36.12px 36.12px 36.12px 7.224px;
+  align-self: flex-start;
+  margin-left: 14px;
+}
+
+.message-bubble.incoming .bubble-tail {
+  position: absolute;
+  left: -14px;
+  bottom: 0px;
+  width: 25.284px;
+  height: 36.12px;
+}
+
+.message-bubble .message-text {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 48.401px;
+  line-height: 79.465px;
+  color: #151515;
+  text-align: right;
+  word-break: break-word;
+  white-space: pre-wrap;
+  direction: rtl;
+}
+
+.message-bubble .message-text.email-text {
+  font-family: 'Roboto', sans-serif;
+  color: #007fb6;
+  font-size: 49.485px;
+  direction: ltr;
+  text-align: left;
+}
+
+/* Quote container */
+.message-bubble .quote-container {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  margin-bottom: 12px;
+  direction: rtl;
+}
+
+.message-bubble .quote-bar {
+  width: 5.779px;
+  background: #4ab5df;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.message-bubble .quote-text {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 41.538px;
+  line-height: 70px;
+  color: #151515;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 780px;
+  direction: rtl;
+}
+
+/* Meta: time + check */
+.message-bubble .message-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  justify-content: flex-end;
+  direction: rtl;
+}
+
+.message-bubble.outgoing .message-time {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 34.676px;
+  line-height: 57.793px;
+  color: #79b2d7;
+}
+
+.message-bubble.incoming .message-time {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 33.592px;
+  line-height: 57.793px;
+  color: #a9b2b9;
+}
+
+.message-bubble .check-icon {
+  width: 57.793px;
+  height: 36.12px;
+}
+
+/* Scroll to bottom button */
+.scroll-to-bottom {
+  position: absolute;
+  left: 924.68px;
+  bottom: 180px;
+  width: 126.421px;
+  height: 126.421px;
+  z-index: 5;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+/* Message Composer */
+.message-composer {
+  width: 1080px;
+  height: 151.706px;
+  background: white;
+  position: relative;
+  flex-shrink: 0;
+  z-index: 10;
+  border-top: 2.348px solid #d3d8dd;
+}
+
+.message-composer .emoji-btn {
+  position: absolute;
+  left: 43.34px;
+  top: 43.34px;
+  width: 75.853px;
+  height: 75.853px;
+  cursor: pointer;
+}
+
+.message-composer .input-area {
+  position: absolute;
+  left: 144px;
+  top: 28.9px;
+  width: 660px;
+  height: 90px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 48px;
+  line-height: 90px;
+  color: #151515;
+  direction: rtl;
+  text-align: left;
+}
+
+.message-composer .input-area::placeholder {
+  color: #a5afb3;
+  text-align: left;
+}
+
+.message-composer .attachment-btn {
+  position: absolute;
+  left: 830.77px;
+  top: 43.34px;
+  width: 72.241px;
+  height: 79.465px;
+  cursor: pointer;
+}
+
+.message-composer .camera-btn {
+  position: absolute;
+  left: 968.03px;
+  top: 43.34px;
+  width: 72.241px;
+  height: 72.241px;
+  cursor: pointer;
+}
+
+.message-composer .send-btn {
+  position: absolute;
+  left: 955px;
+  top: 32px;
+  width: 86px;
+  height: 86px;
+  background: #72829b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-size: 38px;
+  transform: rotate(180deg);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}

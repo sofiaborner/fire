@@ -1,0 +1,402 @@
+.conversation-list {
+  width: 1080px;
+  height: 1849px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+/* Header */
+.list-header {
+  width: 1080px;
+  height: 169.766px;
+  background: #72829b;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.list-header .hamburger {
+  position: absolute;
+  left: 54.18px;
+  top: 54.18px;
+  width: 72.241px;
+  height: 61.405px;
+  cursor: pointer;
+}
+
+.list-header .app-title {
+  position: absolute;
+  left: 209.5px;
+  top: 36.12px;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 55.987px;
+  line-height: 97.525px;
+  color: white;
+  white-space: nowrap;
+}
+
+.list-header .eitaa-logo {
+  position: absolute;
+  left: 834.38px;
+  top: 50.57px;
+  width: 57.793px;
+  height: 68.629px;
+}
+
+.list-header .search-icon {
+  position: absolute;
+  left: 978.86px;
+  top: 57.79px;
+  width: 61.405px;
+  height: 61.405px;
+  cursor: pointer;
+}
+
+/* Category Tabs */
+.category-tabs {
+  width: 1080px;
+  height: 133.645px;
+  background: #72829b;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.category-tabs .apps-icon {
+  position: absolute;
+  left: 917.46px;
+  top: 32.51px;
+  width: 72.241px;
+  height: 72.241px;
+  cursor: pointer;
+}
+
+.category-tabs .separator {
+  position: absolute;
+  left: 841.61px;
+  top: 18.06px;
+  width: 5.418px;
+  height: 93.913px;
+  background: #d5e2ed;
+}
+
+.category-tabs .active-indicator {
+  position: absolute;
+  left: 320px;
+  top: 119.2px;
+  width: 175px;
+  height: 18.06px;
+  background: white;
+  border-radius: 10.836px;
+}
+
+.category-tabs .tab {
+  position: absolute;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 46.234px;
+  line-height: 86.689px;
+  color: #d3deeb;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-tabs .tab.active {
+  color: white;
+}
+
+.category-tabs .tab-all {
+  left: 590px;
+  top: 21.67px;
+  width: 90px;
+  text-align: right;
+  font-size: 45.512px;
+}
+
+.category-tabs .tab-personal {
+  left: 320px;
+  top: 21.67px;
+  width: 120px;
+  text-align: right;
+}
+
+.category-tabs .tab-channel {
+  left: 80px;
+  top: 21.67px;
+  width: 110px;
+  text-align: right;
+}
+
+.category-tabs .unread-badge {
+  position: absolute;
+  width: 61.405px;
+  height: 61.405px;
+}
+
+.category-tabs .unread-badge-text {
+  position: absolute;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 45.512px;
+  line-height: 75.853px;
+  color: #72829b;
+  text-align: center;
+}
+
+.category-tabs .badge-all {
+  left: 695px;
+  top: 36.12px;
+}
+
+.category-tabs .badge-all-text {
+  left: 699px;
+  top: 28.9px;
+  width: 54.181px;
+}
+
+.category-tabs .badge-personal {
+  left: 450px;
+  top: 36.12px;
+}
+
+.category-tabs .badge-personal-text {
+  left: 454px;
+  top: 28.9px;
+  width: 54.181px;
+}
+
+.category-tabs .badge-channel {
+  left: 200px;
+  top: 36.12px;
+}
+
+.category-tabs .badge-channel-text {
+  left: 204px;
+  top: 28.9px;
+  width: 54.181px;
+}
+
+/* Ad Section */
+.ad-section {
+  width: 1080px;
+  height: 216.722px;
+  background: #f7f7f7;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.ad-section .ad-image {
+  position: absolute;
+  left: 888.56px;
+  top: 21.67px;
+  width: 162.542px;
+  height: 162.542px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ad-section .ad-title {
+  position: absolute;
+  left: 281.74px;
+  top: 32.51px;
+  width: 585px;
+  text-align: right;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 50.569px;
+  line-height: 79.465px;
+  color: #242424;
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.ad-section .ad-subtitle {
+  position: absolute;
+  left: 375.66px;
+  top: 111.97px;
+  width: 490px;
+  text-align: right;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 48.04px;
+  line-height: 83.077px;
+  color: #999;
+  white-space: nowrap;
+  direction: rtl;
+}
+
+.ad-section .ad-label {
+  position: absolute;
+  left: 36.12px;
+  top: 36.12px;
+  width: 126.421px;
+  text-align: right;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 40.455px;
+  line-height: 72.241px;
+  color: #a5a5a5;
+  direction: rtl;
+}
+
+/* Conversation Row */
+.conversation-rows {
+  flex: 1;
+  overflow-y: auto;
+  width: 1080px;
+  position: relative;
+}
+
+.conversation-row {
+  width: 1080px;
+  height: 216.722px;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.conversation-row:hover {
+  background: #fbfbfb;
+}
+
+.conversation-row .avatar {
+  position: absolute;
+  left: 888.56px;
+  top: 25.28px;
+  width: 162.542px;
+  height: 162.542px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.conversation-row .title-area {
+  position: absolute;
+  left: 126.42px;
+  top: 21.67px;
+  width: 733.244px;
+  height: 86.689px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10.836px;
+  overflow: hidden;
+  direction: ltr; /* LTR flex with justify-content: flex-end aligns to the right side next to avatar */
+}
+
+.conversation-row .contact-name {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 49.846px;
+  line-height: 86.689px;
+  color: #242424;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 628.495px;
+  text-align: right;
+}
+
+.conversation-row .contact-name.latin {
+  font-family: 'Roboto', sans-serif;
+}
+
+.conversation-row .channel-badge {
+  width: 43.344px;
+  height: 43.344px;
+  flex-shrink: 0;
+}
+
+.conversation-row .mute-icon {
+  width: 36.12px;
+  height: 39.732px;
+  flex-shrink: 0;
+}
+
+.conversation-row .last-message {
+  position: absolute;
+  left: 93.92px;
+  top: 101.14px;
+  width: 765.753px;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 49.124px;
+  line-height: 90.301px;
+  color: #969696;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  direction: rtl;
+}
+
+.conversation-row .timestamp {
+  position: absolute;
+  left: 39.73px;
+  top: 32.51px;
+  width: 111.973px;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 36.843px;
+  line-height: 72.241px;
+  color: #9c9fa2;
+  text-align: left;
+  direction: ltr;
+}
+
+.conversation-row .unread-badge {
+  position: absolute;
+  left: 39.73px;
+  top: 115.59px;
+  background: #c4c8ca;
+  border-radius: 43.344px;
+  padding: 0 18.06px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conversation-row .unread-badge span {
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 39.01px;
+  line-height: 68.629px;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.conversation-row .read-check {
+  position: absolute;
+  left: 151.71px;
+  top: 54.18px;
+  width: 61.405px;
+  height: 39.732px;
+}
+
+.conversation-row .row-separator {
+  position: absolute;
+  left: 0;
+  top: 214.37px;
+  width: 863.278px;
+  height: 2.348px;
+  background: #f1f1f1;
+}
+
+.fab-compose {
+  position: absolute;
+  left: 54.18px;
+  bottom: 54.18px;
+  width: 155.318px;
+  height: 155.318px;
+  border-radius: 50%;
+  background: #72829b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.28);
+  z-index: 20;
+}
+
+.fab-compose svg {
+  width: 65px;
+  height: 65px;
+  fill: white;
+}
